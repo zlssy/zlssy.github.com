@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+
+<head>
+  <title>多米诺效应</title>
+</head>
+<style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #app {
+    width: 560px;
+    margin: 0 auto;
+    border: solid 1px grey;
+  }
+
+  #control {
+    width: 100%;
+    line-height: 36px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  #control::after {
+    content: ' ';
+    clear: both;
+  }
+
+  #reset,
+  #next {
+    width: 150px;
+    text-align: center;
+    background: #af98af;
+    cursor: pointer;
+  }
+
+  #reset {
+    float: left;
+    margin-left: 24px;
+  }
+
+  #next {
+    float: right;
+    margin-right: 24px;
+  }
+
+  #levelInfo {
+    width: 200px;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+  }
+</style>
+
+<body>
+  <h1>多米诺齿轮</h1>
+  <div id="control">
+    <div id="reset">重置本关</div>
+    <div id="levelInfo"></div>
+    <div id="next">下一关</div>
+  </div>
+  <div id="app">
+    <canvas id="game" width="560" height="560"></canvas>
+  </div>
+</body>
+<script src="../data/cldata.js"></script>
+<script src="../js/cl.js"></script>
+
+</html>
