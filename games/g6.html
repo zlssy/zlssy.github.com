@@ -12,6 +12,14 @@
     padding: 0;
   }
 
+  body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
   h1 {
     text-align: center;
   }
@@ -20,13 +28,70 @@
     width: 600px;
     margin: 0 auto;
   }
+
+  #preview {
+    position: absolute;
+  }
+
+  #controller {
+    text-align: center;
+  }
+
+  #level,
+  #next,
+  .timer {
+    display: inline-block;
+  }
+
+  #level {
+    color: slateblue;
+  }
+
+  #next {
+    padding: 6px 24px;
+    color: white;
+    margin-left: 24px;
+    background-color: salmon;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #next.disable {
+    cursor: not-allowed;
+    background-color: grey;
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+
+  .msg {
+    vertical-align: middle;
+  }
+
+  .timer {
+    width: 100px;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .timer i {
+    color: hotpink;
+  }
 </style>
 
-<body>
+<body style="background-color: rgba(100, 211, 111, 0.7);">
   <h1>6色迷盘</h1>
+  <div id="controller">
+    <span class="timer">本局用时:<i id="current">0</i></span>
+    <span class="timer">总用时:<i id="total">0</i></span>
+    <span id="level">第【1】关</span>
+    <div id="next">开始</div>
+  </div>
   <div id="app">
     <canvas id="game" width="600" height="600"></canvas>
   </div>
+  <div id="preview"><canvas id="preGame" width="120" height="120"></canvas></div>
 </body>
 <script src="/js/g6.js"></script>
 
